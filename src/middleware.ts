@@ -1,11 +1,12 @@
 import { withClerkMiddleware } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-export default withClerkMiddleware(() => {
-    console.log("Clerk middleware ran");
+export default withClerkMiddleware((req: NextRequest) => {
     return NextResponse.next();
 });
 
+// Stop Middleware running on static files
 export const config = {
     matcher: [
         /*
@@ -15,7 +16,8 @@ export const config = {
          * - favicon.ico (favicon file)
          * - public folder
          */
-        "/((?!static|.*\\..*|_next|favicon.ico).*)",
+        "/((?!static|_next|favicon.ico).*)",
+        // "/((?!_next/image|_next/static|favicon.ico).*)",
         "/",
     ],
 }
