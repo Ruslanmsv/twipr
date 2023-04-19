@@ -9,6 +9,7 @@ import Head from "next/head";
 import { PostView } from "~/components/PostView";
 import { appRouter } from "~/server/api/root";
 import { api } from "~/utils/api";
+import { generateSSGHelper } from "~/server/helpers/ssgHelper";
 
 const ProfileFeed = (props: { userId: string }) => {
   const { data, isLoading } = api.posts.getPostsByUserId.useQuery({
@@ -63,11 +64,7 @@ const ProfilePage: NextPage<{ username: string }> = ({ username }) => {
 export default ProfilePage;
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const ssg = createServerSideHelpers({
-    router: appRouter,
-    ctx: { prisma, userId: null },
-    transformer: superjson, // optional - adds superjson serialization
-  });
+  const ssg = generateSSGHelper();
 
   const slug = context.params?.slug;
 
