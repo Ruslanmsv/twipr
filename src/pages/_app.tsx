@@ -2,7 +2,7 @@ import Head from "next/head";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "react-hot-toast";
 import { type AppType } from "next/app";
-
+import { Analytics } from "@vercel/analytics/react";
 import { api } from "~/utils/api";
 
 import "~/styles/globals.css";
@@ -17,6 +17,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       </Head>
       <Toaster position="bottom-center" />
       <Component {...pageProps} />
+      <Analytics />
     </ClerkProvider>
   );
 };
