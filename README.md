@@ -1,28 +1,26 @@
-# Create T3 App
+# Twipr 👽
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+This is a twitter clone where you can only post emojis(and numbers). Consists of github login, main page, post page and user profile page
+Build with [T3 Stack](https://create.t3.gg/).
 
-## What's next? How do I make an app with this?
+## Technologies and Integrations
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+Following technologies and services were used for this project:
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
-
+- TypeScript
 - [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
 - [Prisma](https://prisma.io)
 - [Tailwind CSS](https://tailwindcss.com)
 - [tRPC](https://trpc.io)
+- [Clerk](https://clerk.com/)
+- [Vercel](https://vercel.com/)
+- [Upstash](https://upstash.com/)
+- [Planetscale](https://planetscale.com/)
 
-## Learn More
+## How this project can be improved?
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+- Showing only 100 posts right now. Try implementing infinite scroll with additional data fetching. Should probably involve some pagination techniques with trpc.
+- Make separate deployments for production and development and configure CI
+- Test coverage. There are no test right now
+- Try integrating and benchmarking Planetscale [database-js](https://github.com/planetscale/database-js) or [Drizzle ORM](https://github.com/drizzle-team/drizzle-orm)
+- Better styles? There are some bugs on edge cases right now.
